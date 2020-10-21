@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-**Note: ** This site is under construction.
+**Note:** This site is under construction.
 
 I am a third year doctoral student in Developmental Psychology at the University of Chicago. I work with Alex Shaw at the [DIBS Lab](https://www.dibslab.uchicago.edu/) and Dan Yurovsky at the [Communication and Learning Lab](https://callab.uchicago.edu/). 
 
