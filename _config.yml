@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Ben Morris"
 title_separator          : "-"
-name                     : &name "Benjamin C. Morris"
+name                     : &name "Ben Morris"
 description              : &description "personal description"
 url                      : https://benjamincmorris.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Benjamin C. Morris"
+  name             : "Ben C. Morris"
   avatar           : "morris.png"
   bio              : "Graduate Student at Univeristy of Chicago"
   location         : "Chicago, USA"
