@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Ben Morris"
   avatar           : "morris.png"
-  bio              : "Graduate Student at University of Chicago"
-  location         : "Chicago, USA"
+  bio              : "Developmental Cognitive Scientist"
+  location         : "New Haven, CT"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=b6ubkYgAAAAJ&hl=en"
-  email            : "benmorris@uchicago.edu"
+  email            : "benjamin.morris@yale.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
