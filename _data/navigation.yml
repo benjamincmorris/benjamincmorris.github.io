@@ -5,13 +5,12 @@ main:
     url: /portfolio/
 
   - title: "Publications"
-    url: /publications/
-
+    url: /papers/
   #- title: "Talks"
    # url: /talks/    
 
-  # - title: "Teaching"
-  #  url: /teaching/    
+  - title: "Teaching"
+    url: /pedagogy/    
         
   #- title: "Blog Posts"
    # url: /year-archive/
