@@ -9,6 +9,11 @@
  *  - https://twitter.com/mmistakes
  *
 */
+// Force bold to actually render visually
+strong, b {
+  font-weight: 700 !important;
+  color: #000;  // optional: make sure bold is not just dark grey
+}
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";

@@ -1,5 +1,5 @@
 ---
-title: '"Oh!" Reasoning about underlying expectations <a href="/files/NAP_morris_shaw_2024.pdf" target="_blank">'
+title: 'Conversational Cues Reveal Hidden Social Expectations <a href="/files/NAP_morris_shaw_2024.pdf" target="_blank">'
 excerpt: "<img src='/images/nap1-gender-stim.png' style='float: right; width: 50%; margin-left: 20px;'>
 Imagine a young boy expressing a gender counter-stereotypical preference (e.g., wanting to buy a Barbie doll) and his caregiver provides a permissive, gender egalitarian response. However, imagine that response comes slowly, with markers of surprise and production difficulty (e.g., “Oh! Um. . . Sure”). What message does that young boy really receive? 
 <br><br>
