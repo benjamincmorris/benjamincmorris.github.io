@@ -15,9 +15,13 @@ author_profile: true
 - [Refereed Conference Proceeding Papers](#refereed-conference-proceeding-papers)
 - [Book Chapters](#book-chapters) -->
 
+### **In Prep**
+
+Hok, H., **Morris, B.**, & Shaw, A. (in prep). Children believe fair rules are unfair when they are used inconsistently. 
+
 ### **Submitted/Under Revision**
 
-Bergey, C.\*, **Morris, B.**\*, & Yurovsky, D. (in prep). Children hear more about what is atypical than what is typical. 
+Bergey, C.\*, **Morris, B.**\*, & Yurovsky, D. (invited revision). Children hear more about what is atypical than what is typical. 
 
 **Morris, B.**, Yurovsky, D., & Shaw, S. (invited revision). "Um..." Thinking out loud: Children infer the social meaning of speech disfluencies.
 

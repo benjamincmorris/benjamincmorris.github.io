@@ -9,11 +9,7 @@
  *  - https://twitter.com/mmistakes
  *
 */
-// Force bold to actually render visually
-strong, b {
-  font-weight: 700 !important;
-  color: #000;  // optional: make sure bold is not just dark grey
-}
+
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -44,3 +40,43 @@ strong, b {
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+// Force bold to actually render visually
+strong, b {
+  font-weight: 700 !important;
+  color: #000;  // optional: make sure bold is not just dark grey
+}
+
+/* Tighter spacing for all list items */
+ul, ol {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  padding-left: 2em;
+}
+
+li {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/* Tighter spacing between headings and the UL or OL that follows */
+h1 + ul,
+h2 + ul,
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h1 + ol,
+h2 + ol,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+  margin-top: 0em !important; /* shrink space after header */
+}
+
+/* Optionally tighten spacing below headings themselves */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0em; /* reduce default bottom spacing */
+}
+

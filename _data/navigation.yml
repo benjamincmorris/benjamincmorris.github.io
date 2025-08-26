@@ -10,7 +10,10 @@ main:
    # url: /talks/    
 
   - title: "Teaching"
-    url: /pedagogy/    
+    url: /pedagogy/  
+
+  # - title: "In Conversation"
+  #   url: /examples/  
         
   #- title: "Blog Posts"
    # url: /year-archive/
