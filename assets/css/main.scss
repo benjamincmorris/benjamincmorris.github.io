@@ -80,3 +80,103 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0em; /* reduce default bottom spacing */
 }
 
+.epistemic-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 2rem auto;
+}
+
+.heads {
+  width: 100%;
+  display: block;
+}
+
+.network-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.listener-node {
+  fill: #f97316;
+}
+
+.speaker-node {
+  fill: #3b82f6;
+}
+
+.network-layer line {
+  stroke-width: 2;
+  stroke: currentColor;
+}
+
+.speech-bubble {
+  transform-origin: center;
+  animation: bubblePop 0.6s ease forwards;
+}
+
+@keyframes bubblePop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.speech-bubble{
+  opacity:0;
+  transform-origin:center;
+  transition:transform .5s ease, opacity .4s ease;
+}
+
+.speech-node{
+  opacity:0;
+  transition:opacity .4s ease;
+}
+
+.listener-node,
+.speaker-node{
+  transition:r .35s ease, opacity .35s ease;
+}
+
+.edge-active{
+  opacity:1;
+}
+
+.edge-dim{
+  opacity:.25;
+}
+
+.speech-group{
+  opacity:0;
+  transform-origin:center;
+  transform-box:fill-box;
+  transition:opacity .4s ease;
+}
+
+.uncertain-node{
+  fill:white;
+  stroke-width:2;
+}
+
+.node-active{
+  opacity:1;
+}
+
+.node-dim{
+  opacity:.35;
+}
+
+svg{
+  display:block;
+  margin:0;
+}

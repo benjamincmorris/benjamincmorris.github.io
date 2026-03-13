@@ -5,9 +5,9 @@ permalink: /pedagogy/
 author_profile: true
 ---
 
-Teaching is not one-size-fits-all. As such, my approach to teaching is fundamentally adaptive: I strive to meet students where they are, tailoring my teaching to their diverse needs, backgrounds, and goals. Across courses in developmental, social, and cognitive psychology, I aim to build intellectually vibrant spaces that engage students in both foundational theories and contemporary debates.
+I teach psychological science as a creative practice. Psychologists face the challenge of translating abstract questions about the mind into concrete empirical tests. In my courses, I encourage students to see research methods not simply as tools to memorize, but as creative solutions to conceptual problems. Whether we are studying infants who cannot yet speak or complex social interactions between adults, students learn to think like scientists: generating hypotheses, designing clever tests, and evaluating the limits of their conclusions. My goal is for students to experience science not as a fixed body of facts, but as a process of discovery, revision, and collaborative reasoning. My teaching emphasizes creativity, adaptability, and experimentation. 
 
-Informed by my interdisciplinary background—including psychology, sociology, linguistics, and computer science—I encourage students to see how core psychological processes unfold in real-world social contexts. I believe that effective teaching combines rigor with reflection: teaching should not only transmit knowledge, but cultivate curiosity, flexible thinking, and critical engagement with science as a practice.
+Informed by my interdisciplinary background (in psychology, sociology, linguistics, and computer science), I encourage students to see how core psychological processes unfold in real-world social contexts. I believe that effective teaching combines rigor with reflection: teaching should not only transmit knowledge, but cultivate curiosity, flexible thinking, and critical engagement with science as a practice.
 
 
 # Course Instruction
