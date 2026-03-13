@@ -129,61 +129,27 @@ function runUpdate(nodes,color){
 
 }
 
+function pulseNode(node){
+
+  const base = parseFloat(node.getAttribute("r")) || 9
+
+  node.setAttribute("r", base + 3)
+
+  setTimeout(()=>{
+    node.setAttribute("r", base)
+  },220)
+
+}
+
 function propagate(nodes, edges, color){
 
-  const uncertain = Math.random() < 0.18   // ~1 in 5 turns
+  const uncertain = Math.random() < 0.2
 
   const nodeList = [...nodes]
   const source = nodeList[Math.floor(Math.random()*nodeList.length)]
 
   const sx = source.getAttribute("cx")
   const sy = source.getAttribute("cy")
-
-  // uncertain case
-  if(uncertain){
-
-    showQuestion()
-
-    source.setAttribute("r",9)
-    source.setAttribute("fill","white")
-    source.setAttribute("stroke",color)
-    source.setAttribute("stroke-width",2)
-    source.setAttribute("fill-opacity",1)
-
-    const neighbors = []
-
-    edges.forEach(e=>{
-      const x1=e.getAttribute("x1")
-      const y1=e.getAttribute("y1")
-      const x2=e.getAttribute("x2")
-      const y2=e.getAttribute("y2")
-
-      if(x1===sx && y1===sy){
-        const n=nodeList.find(n=>n.getAttribute("cx")===x2 && n.getAttribute("cy")===y2)
-        if(n) neighbors.push(n)
-      }
-
-      if(x2===sx && y2===sy){
-        const n=nodeList.find(n=>n.getAttribute("cx")===x1 && n.getAttribute("cy")===y1)
-        if(n) neighbors.push(n)
-      }
-    })
-
-    neighbors.slice(0,2).forEach(n=>{
-      n.setAttribute("fill","white")
-      n.setAttribute("stroke",color)
-      n.setAttribute("stroke-width",2)
-      n.setAttribute("fill-opacity",1)
-    })
-
-    return
-  }
-
-  // normal propagation
-  question.style.opacity = 0
-
-  source.setAttribute("r",10)
-  source.setAttribute("fill-opacity",1)
 
   const neighbors = []
 
@@ -208,11 +174,41 @@ function propagate(nodes, edges, color){
 
   const targets = neighbors.slice(0,3)
 
+  if(uncertain){
+
+    showQuestion()
+
+    nodes.forEach(n=>{
+      n.setAttribute("fill-opacity",0.15)
+      n.setAttribute("stroke","none")
+    })
+
+    source.setAttribute("r",9)
+    source.setAttribute("fill","white")
+    source.setAttribute("stroke",color)
+    source.setAttribute("stroke-width",2)
+    source.setAttribute("fill-opacity",1)
+
+    targets.forEach(n=>{
+      n.setAttribute("fill","white")
+      n.setAttribute("stroke",color)
+      n.setAttribute("stroke-width",2)
+      n.setAttribute("fill-opacity",1)
+    })
+
+    return
+  }
+
+  question.style.opacity = 0
+
+  source.setAttribute("fill-opacity",1)
+  pulseNode(source)
+
   setTimeout(()=>{
 
     targets.forEach(n=>{
-      n.setAttribute("r",9)
       n.setAttribute("fill-opacity",1)
+      pulseNode(n)
     })
 
     glowEdges(source,targets,edges)
@@ -221,9 +217,16 @@ function propagate(nodes, edges, color){
 
 }
 
-function glowEdges(source,neighbors,edges){
+function glowEdges(source, neighbors, edges){
 
   const activeNodes=[source,...neighbors]
+
+  function isActive(x,y){
+    return activeNodes.some(n =>
+      n.getAttribute("cx")===x &&
+      n.getAttribute("cy")===y
+    )
+  }
 
   edges.forEach(e=>{
 
@@ -232,24 +235,14 @@ function glowEdges(source,neighbors,edges){
     const x2=e.getAttribute("x2")
     const y2=e.getAttribute("y2")
 
-    const touches=activeNodes.some(n=>{
-      const cx=n.getAttribute("cx")
-      const cy=n.getAttribute("cy")
+    if(isActive(x1,y1) && isActive(x2,y2)){
 
-      return(
-        (cx===x1 && cy===y1) ||
-        (cx===x2 && cy===y2)
-      )
-    })
-
-    if(touches){
-
-      e.setAttribute("stroke-width",4)
       e.setAttribute("stroke-opacity",1)
+      e.setAttribute("stroke-width",4)
 
       setTimeout(()=>{
-        e.setAttribute("stroke-width",2)
         e.setAttribute("stroke-opacity",0.35)
+        e.setAttribute("stroke-width",2)
       },350)
 
     }
