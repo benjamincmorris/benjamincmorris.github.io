@@ -29,7 +29,7 @@ I study how people build mental models of others in real time, just by listening
   <svg class="network-layer" viewBox="330 -50 350 400">
 
   <!-- SPEECH BUBBLE -->
-<g class="speech-group" transform="translate(-150, 300)">
+<g class="speech-group" transform="translate(0, 0)">
 
   <path
     class="speech-bubble"

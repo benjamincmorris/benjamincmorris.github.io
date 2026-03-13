@@ -77,28 +77,27 @@ function uncertainUpdate(nodes,color){
 
 function showBubble(color,flip){
 
-  bubble.style.stroke=color
-  speechNode.style.fill=color
-  speechNode.style.opacity=1
+  bubble.style.stroke = color
+  speechNode.style.fill = color
+  speechNode.style.opacity = 1
 
-  if(flip){
-    bubbleGroup.style.transform="scaleX(-1)"
-  }else{
-    bubbleGroup.style.transform="scaleX(1)"
-  }
+  bubbleGroup.style.transform = flip ? "scaleX(-1)" : "scaleX(1)"
+  bubbleGroup.dataset.flip = flip ? "1" : "0"
 
-  bubbleGroup.style.opacity=1
+  bubbleGroup.style.opacity = 1
 }
 
 /* keep question mark readable when bubble flips */
-
 function showQuestion(){
 
-  question.style.opacity=1
-  question.style.fontWeight="700"
-  question.style.fontSize="28px"
+  question.style.opacity = 1
+  question.style.fontWeight = "700"
+  question.style.fontSize = "28px"
 
-  question.style.transform="scaleX(1)"   // cancel bubble flip
+  const flipped = bubbleGroup.dataset.flip === "1"
+
+  question.style.transform = flipped ? "scaleX(-1)" : "scaleX(1)"
+  question.setAttribute("x", flipped ? 460 : 520)
 
 }
 
@@ -113,7 +112,6 @@ function hideBubble(){
 
 function runUpdate(nodes,color){
 
-  const uncertain=Math.random()<0.2   // rare
 
   if(uncertain){
 
@@ -129,9 +127,13 @@ function runUpdate(nodes,color){
 
 }
 
-function pulseNode(node){
+function pulseNode(node, color){
 
   const base = parseFloat(node.getAttribute("r")) || 9
+
+  node.style.fill = color
+  node.style.stroke = "none"
+  node.style.fillOpacity = 1
 
   node.setAttribute("r", base + 3)
 
@@ -141,9 +143,23 @@ function pulseNode(node){
 
 }
 
-function propagate(nodes, edges, color){
+function ignorancePulse(node,color){
 
-  const uncertain = Math.random() < 0.2
+  const base = parseFloat(node.getAttribute("r")) || 9
+
+  node.style.fill = "white"
+  node.style.stroke = color
+  node.style.strokeWidth = "2"
+  node.style.fillOpacity = "1"
+
+  node.setAttribute("r", base + 2)
+
+  setTimeout(()=>{
+    node.setAttribute("r", base)
+  },260)
+
+}
+function propagate(nodes, edges, color, uncertain){
 
   const nodeList = [...nodes]
   const source = nodeList[Math.floor(Math.random()*nodeList.length)]
@@ -174,27 +190,17 @@ function propagate(nodes, edges, color){
 
   const targets = neighbors.slice(0,3)
 
-  if(uncertain){
+  if (uncertain) {
 
-    showQuestion()
+    ignorancePulse(source, color)
 
-    nodes.forEach(n=>{
-      n.setAttribute("fill-opacity",0.15)
-      n.setAttribute("stroke","none")
-    })
-
-    source.setAttribute("r",9)
-    source.setAttribute("fill","white")
-    source.setAttribute("stroke",color)
-    source.setAttribute("stroke-width",2)
-    source.setAttribute("fill-opacity",1)
-
-    targets.forEach(n=>{
-      n.setAttribute("fill","white")
-      n.setAttribute("stroke",color)
-      n.setAttribute("stroke-width",2)
-      n.setAttribute("fill-opacity",1)
-    })
+    setTimeout(()=>{
+      targets.forEach((n,i)=>{
+        setTimeout(()=>{
+          ignorancePulse(n, color)
+        }, i * 220)
+      })
+    },250)
 
     return
   }
@@ -202,13 +208,13 @@ function propagate(nodes, edges, color){
   question.style.opacity = 0
 
   source.setAttribute("fill-opacity",1)
-  pulseNode(source)
+  pulseNode(source, color)
 
   setTimeout(()=>{
 
     targets.forEach(n=>{
       n.setAttribute("fill-opacity",1)
-      pulseNode(n)
+      pulseNode(n, color)
     })
 
     glowEdges(source,targets,edges)
@@ -253,42 +259,40 @@ function glowEdges(source, neighbors, edges){
 
 /* ---------- conversation loop ---------- */
 
-function rightTurn(){   // orange speaking
+function rightTurn(){
+
+  const uncertain = Math.random() < 0.2
 
   showBubble("#f97316",false)
 
+  if(uncertain) showQuestion()
+  else question.style.opacity = 0
+
   setTimeout(()=>{
-    propagate(orangeNodes, orangeEdges, "#f97316")
-    // runUpdate(orangeNodes,"#f97316")
+    propagate(orangeNodes, orangeEdges, "#f97316", uncertain)
   },700)
 
-  setTimeout(()=>{
-    hideBubble()
-  },3000)
+  setTimeout(()=> hideBubble(),3000)
 
-  setTimeout(()=>{
-    leftTurn()
-  },5400)
-
+  setTimeout(()=> leftTurn(),5400)
 }
 
-function leftTurn(){    // blue speaking
+function leftTurn(){
+
+  const uncertain = Math.random() < 0.2
 
   showBubble("#3b82f6",true)
 
+  if(uncertain) showQuestion()
+  else question.style.opacity = 0
+
   setTimeout(()=>{
-      propagate(blueNodes, blueEdges, "#3b82f6")
-    // runUpdate(blueNodes,"#3b82f6")
+    propagate(blueNodes, blueEdges, "#3b82f6", uncertain)
   },700)
 
-  setTimeout(()=>{
-    hideBubble()
-  },3000)
+  setTimeout(()=> hideBubble(),3000)
 
-  setTimeout(()=>{
-    rightTurn()
-  },5400)
-
+  setTimeout(()=> rightTurn(),5400)
 }
 
 /* ---------- start ---------- */
@@ -296,4 +300,6 @@ function leftTurn(){    // blue speaking
 resetNodes(orangeNodes,"#f97316")
 resetNodes(blueNodes,"#3b82f6")
 
-rightTurn()
+  setTimeout(()=>{
+    rightTurn()
+  },500)
