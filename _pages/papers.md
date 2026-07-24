@@ -20,11 +20,12 @@ author_profile: true
 
 **Morris, B.**, & Shaw, A. (in prep). “Oh! Um. . . Sure”: Children and adults use other’s linguistic surprisal to reason about expectations and learn stereotypes.
 
-**Morris, B.**\*, Suwal, U.\*, Lin, Q., Rubio-Fernandez, R., & Jara-Ettinger, J. (in prep). Speakers strategically adjust their image descriptions based on perceived memorability.
 
 ### **Submitted/Under Revision**
 
 Hok, H., **Morris, B.**, & Shaw, A. (submitted). Fair Rules, Unfair Use: Children negatively evaluate inconsistent rule use. 
+
+**Morris, B.**\*, Suwal, U.\*, Lin, Q., Rubio-Fernandez, R., & Jara-Ettinger, J. (submitted). Speakers strategically adjust their image descriptions based on perceived memorability.
 
 Bergey, C.\*, **Morris, B.**\*, & Yurovsky, D. (invited revision). Language selectively encodes atypical features of the world. Nature communications.
 
@@ -33,9 +34,15 @@ Bergey, C.\*, **Morris, B.**\*, & Yurovsky, D. (invited revision). Language sele
 
 ### **Published**
 
-**Morris, B.**, Yurovsky, D., & Shaw, S. (in press). "Um..." Thinking out loud: Children infer the social meaning of speech disfluencies. *Child Development.*
 
-**Morris, B.**, Shaw, A., Liberman, Z. (in press). Calibrated deference: Children's evaluations of responses to disagreement across knowledge gaps. *Cognition.*
+**Morris, B.** & Jara-Ettinger, J. (2026). Epistemic Extrapolation: Inferring the Fine-Grained Structure of Others’ Knowledge From Minimal Evidence. In Proceedings of the 48th Annual Conference of the Cognitive Science Society.
+
+**Morris, B.** & Jara-Ettinger, J. (2026). How Long Should That Take? Reading Minds in Real Time from Decision Speed. In Proceedings of the 48th Annual Conference of the Cognitive Science Society.
+
+
+**Morris, B.**, Yurovsky, D., & Shaw, S. (2026). "Um..." Thinking out loud: Children infer the social meaning of speech disfluencies. *Child Development.*
+
+**Morris, B.**, Shaw, A., Liberman, Z. (2026). Calibrated deference: Children's evaluations of responses to disagreement across knowledge gaps. *Cognition.*
 
 
 Suwal, U.\*, **Morris, B.**\*, Lin, Q., Rubio-Fernandez, R., & Jara-Ettinger, J. (2025). Speakers strategically adjust their descriptions based on perceived memorability. In Proceedings of the 47th Annual Conference of the Cognitive Science Society.
